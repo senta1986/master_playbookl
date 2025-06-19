@@ -3,7 +3,7 @@
   hosts: all 
   tasks:
     - name: Create directory
-      ansibe.builtin.file:
+      ansible.builtin.file:
         name: "{{DIRECTORY}}"
         type: directory
     - name: Crete file
