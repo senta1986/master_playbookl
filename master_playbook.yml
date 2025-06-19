@@ -5,11 +5,11 @@
     - name: Create directory
       ansible.builtin.file:
         name: "{{DIRECTORY}}"
-        type: directory
+        state: directory
     - name: Crete file
       ansible.builtin.file:
         name: "{{FILE}}"
-        type: touch
+        state: touch
     - name: copy content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
