@@ -1,19 +1,17 @@
 ---
-- name: playbook to runn content
-  hosts: all
+- name: Update teh content 
+  hosts: all 
   tasks:
-    - name: create directory
+    - name: Create directory
       ansible.builtin.file:
         name: "{{DIRECTORY}}"
         state: directory
-    - name: create file
+    - name: Create file
       ansible.builtin.file:
         name: "{{FILE}}"
-        state: touch
-    - name: copy content
+        state: tocuh
+    - name: Create content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
         dest: "{{DIRECTORY}}/{{FILE}}"
-
-
 
