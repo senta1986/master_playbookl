@@ -1,17 +1,16 @@
 ---
-- name: Creat master playbook 
-  hosts: all 
+- name: Create master playbook 
+  hosts: dev
   tasks:
-    - name: Create directory
-      ansibe.builtin.file:
+    - name: Create directory 
+      ansible.builtin.file:
         name: "{{DIRECTORY}}"
-        type: directory
-    - name: Crete file
+        state: directory
+    - name: create file
       ansible.builtin.file:
         name: "{{FILE}}"
-        type: touch
+        state: touch
     - name: copy content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
         dest: "{{DIRECTORY}}/{{FILE}}"
-
