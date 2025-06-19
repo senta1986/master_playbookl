@@ -9,7 +9,7 @@
     - name: Create file
       ansible.builtin.file:
         name: "{{FILE}}"
-        state: tocuh
+        state: touch
     - name: Create content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
