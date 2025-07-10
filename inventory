@@ -1,2 +1,2 @@
-[dev]
-servera.lab.example.com
+[webservers]
+serverc.lab.example.com
