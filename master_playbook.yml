@@ -1,6 +1,6 @@
 ---
-- name: update mast playbook
-  hosts: webservers
+- name: update content
+  hosts: all
   tasks:
     - name: create directory
       ansible.builtin.file:
@@ -10,7 +10,7 @@
       ansible.builtin.file:
         name: "{{FILE}}"
         state: touch
-    - name: update content
+    - name: Update content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
         dest: "{{DIRECTORY}}/{{FILE}}"
