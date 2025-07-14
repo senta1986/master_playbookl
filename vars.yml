@@ -1,0 +1,4 @@
+---
+DIRECTORY: /var/www/html
+FILE: index.html
+CONTENT: "Sun rises in east"

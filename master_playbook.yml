@@ -1,16 +1,18 @@
 ---
-- name: update content
+- name: update the content with variables
   hosts: webservers
+  vars_files:
+    - vars.yml
   tasks:
-    - name: create directory
+    - name: Create directory
       ansible.builtin.file:
         name: "{{DIRECTORY}}"
         state: directory
-    - name: create file
+    - name: Create file
       ansible.builtin.file:
         name: "{{FILE}}"
         state: touch
-    - name: Update content
+    - name: copy content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
         dest: "{{DIRECTORY}}/{{FILE}}"
