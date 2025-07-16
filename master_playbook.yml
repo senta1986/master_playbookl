@@ -1,6 +1,6 @@
 ---
 - name: copy content from variable
-  hosts: servera.lab.example.com
+  hosts: testing
   vars_files:
     - vars.yml
   tasks:
