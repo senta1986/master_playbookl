@@ -1,18 +1,16 @@
 ---
-- name: copy content from variable
+- name: update the content 
   hosts: testing
-  vars_files:
-    - vars.yml
-  tasks:
+  tasks: 
     - name: create directory
       ansible.builtin.file:
         name: "{{DIRECTORY}}"
         state: directory
-    - name: Create file
+    - name: create file
       ansible.builtin.file:
         name: "{{FILE}}"
         state: touch
-    - name: copy content
+    - name: Update content
       ansible.builtin.copy:
         content: "{{CONTENT}}"
         dest: "{{DIRECTORY}}/{{FILE}}"
